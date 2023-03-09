@@ -1,13 +1,19 @@
 import './App.css';
-import { Box } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
+import theme from './theme';
+import { Container } from '@mui/material';
 import NavBar from './components/NavBar';
+import React from 'react'
 
-function App() {
+const App = () => {
   return (
-  <Box>
-    <NavBar /> 
-  </Box>
-  );
+    <ThemeProvider theme={theme}>
+      <NavBar />
+      <Container maxWidth="xl">
+        Testing
+      </Container>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App
