@@ -1,7 +1,5 @@
 import { createTheme } from '@mui/material/styles';
 
-
-
 const theme = createTheme({
     palette: {
         primary: {
@@ -9,7 +7,11 @@ const theme = createTheme({
         },
         secondary: {
             main: '#000000',
-        }
+        },
+        text: {
+            primary: '#00000',
+            secondary: 'rgba(55,55,55,0.6)',
+        },
     },
 });
 

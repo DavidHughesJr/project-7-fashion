@@ -21,19 +21,22 @@ function NavBar() {
     };
 
     return (
-        <AppBar elevation={0}  color='background' position="static">
+        <AppBar elevation={0} color='background' position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box
                         component="img"
                         sx={{
-                            padding: 1
+                            padding: 1,
+                            width: '10px',
+                            display: { xs: 'none', md: 'flex' }
                         }}
                         alt="The house from the offer."
                         src={Logo}
+
                     />
                     <Typography
-                        variant="h5"
+                        variant="h6"
                         noWrap
                         component="a"
                         href="/"
@@ -48,7 +51,6 @@ function NavBar() {
                     >
                         FASHION
                     </Typography>
-
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
@@ -85,9 +87,19 @@ function NavBar() {
                             ))}
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+                    <Box
+                        component="img"
+                        sx={{
+                            padding: 1,
+                            width: '10px',
+                            display: { xs: 'flex', md: 'none' }
+                        }}
+                        alt="The house from the offer."
+                        src={Logo}
+
+                    />
                     <Typography
-                        variant="h5"
+                        variant="subtitle2"
                         noWrap
                         component="a"
                         href=""
@@ -102,14 +114,14 @@ function NavBar() {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        FASHION
                     </Typography>
                     <Box sx={{ flexGrow: 1, justifyContent: 'flex-end', display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{color: 'inherit', display: 'block', m: 3}}
+                                sx={{ color: 'inherit', display: 'block', m: 3 }}
                             >
                                 {page}
                             </Button>
