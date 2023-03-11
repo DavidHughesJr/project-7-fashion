@@ -4,16 +4,10 @@ import Hero from "../components/Hero"
 
 const Homepage = () => {
   return (
-    <Box>
       <Container maxWidth='xl'>
         <Hero />
         <Banner />
       </Container>
-   
-      <Container maxWidth='xl'>
-
-      </Container>
-    </Box>
   )
 }
 
