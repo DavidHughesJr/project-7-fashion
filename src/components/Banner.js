@@ -22,7 +22,7 @@ const Banner = () => {
                 <Box sx={{ width: 100 }}>  <img src={Lacoste} alt="H&M" style={{ width: '100%', position: 'relative', bottom: 5 }} /> </Box>
                 <Box sx={{ width: 100 }}>  <img src={Amazon} alt="Obey" style={{ width: '100%', position: 'relative', bottom: 0 }} /> </Box>
             </Stack>
-            <Box sx={{ borderRadius: 2, backgroundColor: '#ebd96b', width: '100%', height: { xs: '20rem', md: '5rem' }, position: 'relative', zIndex: 2, bottom: { xs: 350, md: 120 }, mixBlendMode: 'multiply' }}>  </Box>
+            <Box sx={{ borderRadius: 10, backgroundColor: '#ebd96b', width: '100%', height: { xs: '20rem', md: '5rem' }, position: 'relative', zIndex: 2, bottom: { xs: 350, md: 120 }, mixBlendMode: 'multiply' }}>  </Box>
         </Box>
 
     )
