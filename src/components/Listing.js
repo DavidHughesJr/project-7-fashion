@@ -11,22 +11,22 @@ import Vector from '../img/vector.png'
 
 
 const Listing = ({ heading, data }) => {
-  console.log(data.img);
 
   return (
     <Box pt={5} pb={5}>
       <Typography className="listing-heading" variant="h5" fontWeight={900} mb={4}> {heading} </Typography>
-      <img className="listing-vector" src={Vector}   alt=""/>
+      <img className="listing-vector" src={Vector}   alt="vector"/>
       <Stack direction="row" justifyContent="space-between" flexWrap='wrap'>
         {data?.map((item) => (
           <Card
             elevation={0}
             sx={{
-              maxWidth: 300,
+              maxWidth: 500,
               minWidth: 300,
               borderRadius: 5,
               background: "",
             }}
+            key={item.id}
           >
             <CardActionArea>
               <CardMedia

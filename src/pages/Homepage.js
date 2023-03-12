@@ -5,7 +5,9 @@ import Listing from "../components/Listing"
 import Info from "../settings/Info"
 
 const NewArrivalsHeading = 'New Arrivals'
-const NewArrivals = Info
+const NewArrivals = Info[0]
+const CustomerFavoritesHeading = "Customer Favorites"
+const CustomerFavorites = Info[1]
 
 
 const Homepage = () => {
@@ -14,6 +16,7 @@ const Homepage = () => {
         <Hero />
         {/* <Banner /> */}
         <Listing heading={NewArrivalsHeading} data={NewArrivals}/> 
+        <Listing heading={CustomerFavoritesHeading} data={CustomerFavorites}/> 
       </Container>
   )
 }
