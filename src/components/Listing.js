@@ -14,8 +14,10 @@ const Listing = ({ heading, data }) => {
 
   return (
     <Box pt={5} pb={5}>
+      <Box sx={{position: 'relative'}}>
       <Typography className="listing-heading" variant="h5" fontWeight={900} mb={4}> {heading} </Typography>
       <img className="listing-vector" src={Vector}   alt="vector"/>
+      </Box>
       <Stack direction="row" justifyContent="space-between" flexWrap='wrap'>
         {data?.map((item) => (
           <Card

@@ -28,9 +28,9 @@
   z-index: 10;
 }
 .listing-vector {
-  position: absolute;
-  bottom: 8rem;
-  left: 6rem;
-  width: 10%;
-  z-index: 1;
+    position: absolute;
+    bottom: 0rem;
+    left: 5rem;
+    width: 10%;
+    z-index: 1;
 }
