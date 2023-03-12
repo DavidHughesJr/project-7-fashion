@@ -1,9 +1,8 @@
 import React from 'react'
 import { Box, Paper, Container, Typography, Button, Stack } from '@mui/material'
-import HeroBackground from '../img/Hero.jpg'
-import HeroImage from '../img/HeroImage.png'
-import HeroVector from '../img/HeroVector.png'
-import { maxWidth } from '@mui/system';
+import HeroBackground from '../img/hero/Hero.jpg'
+import HeroImage from '../img/hero/HeroImage.png'
+import Vector from '../img/vector.png'
 
 const styles = {
     paperContainer: {
@@ -40,13 +39,13 @@ const Hero = () => {
                         </Box>
                         <Stack direction={{xs: 'column', md: 'row'}} spacing={2} >
                             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center',}} > 
-                                <img style={{ width: '70%', padding: 10 }} src={HeroVector} alt="hero vector" />
+                                <img style={{ width: '70%', padding: 10 }} src={Vector} alt="hero vector" />
                             </Box>
                             <Button variant='contained' color='secondary'> Shop Now </Button>
                         </Stack>
                     </Box>
                     <Box sx={{ zIndex: 1, maxWidth: { xs: '400px', md: '800px' }, marginTop: 'auto', width: {sm: '40%', md: '50%', lg: '40%' }, position: 'relative', top: {sm: '3rem', md: 0}}}>
-                        <img style={{ width: '100%', verticalAlign: 'bottom' }} src={HeroImage} alt="Hero Image" />
+                        <img style={{ width: '100%', verticalAlign: 'bottom' }} src={HeroImage} alt="Hero" />
                     </Box>
                 </Stack>
             </Container>

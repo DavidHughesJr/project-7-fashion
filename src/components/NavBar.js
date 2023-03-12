@@ -2,15 +2,13 @@ import * as React from 'react';
 import { AppBar, Box, Container, Toolbar, IconButton, Typography, Menu, MenuItem, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
-import AdbIcon from '@mui/icons-material/Adb';
 import Logo from "../img/logo.jpg"
 
 const pages = ['Catalogue', 'Fashion', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
 
 function NavBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
