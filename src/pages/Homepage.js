@@ -1,8 +1,11 @@
 import { Container } from "@mui/material"
-import Banner from "../components/Banner"
-import Hero from "../components/Hero"
-import Listing from "../components/Listing"
+import Hero from "../components/home/Hero"
+import Listing from "../components/home/Listing"
+import SalesBanner from "../components/home/SalesBanner"
+import Footer from "../components/common/Footer"
 import Info from "../settings/Info"
+import Newsletter from "../components/common/Newsletter"
+
 
 const NewArrivalsHeading = 'New Arrivals'
 const NewArrivals = Info[0]
@@ -16,7 +19,10 @@ const Homepage = () => {
         <Hero />
         {/* <Banner /> */}
         <Listing heading={NewArrivalsHeading} data={NewArrivals}/> 
+        <SalesBanner />
         <Listing heading={CustomerFavoritesHeading} data={CustomerFavorites}/> 
+        <Newsletter />
+        <Footer /> 
       </Container>
   )
 }

@@ -7,7 +7,7 @@ import {
   CardContent,
 } from "@mui/material";
 import { Stack } from "@mui/system";
-import Vector from '../img/vector.png'
+import Vector from '../../img/common/vector.png'
 
 
 const Listing = ({ heading, data }) => {
@@ -15,16 +15,16 @@ const Listing = ({ heading, data }) => {
   return (
     <Box pt={5} pb={5}>
       <Box sx={{position: 'relative'}}>
-      <Typography className="listing-heading" variant="h5" fontWeight={900} mb={4}> {heading} </Typography>
+      <Typography className="listing-heading" variant="h5" fontWeight={900}  mb={4}> {heading} </Typography>
       <img className="listing-vector" src={Vector}   alt="vector"/>
       </Box>
-      <Stack direction="row" justifyContent="space-between" flexWrap='wrap'>
+      <Stack direction="row" justifyContent={{xs: 'center', md: 'space-between' }} flexWrap='wrap' spacing={1}>
         {data?.map((item) => (
           <Card
             elevation={0}
             sx={{
-              maxWidth: 500,
-              minWidth: 300,
+              maxWidth: 490,
+              minWidth: 290,
               borderRadius: 5,
               background: "",
             }}

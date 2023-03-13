@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AppBar, Box, Container, Toolbar, IconButton, Typography, Menu, MenuItem, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
-import Logo from "../img/logo.jpg"
+import Logo from "../../img/common/logo.jpg"
 
 const pages = ['Catalogue', 'Fashion', 'Blog'];
 

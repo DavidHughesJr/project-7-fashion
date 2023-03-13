@@ -1,11 +1,11 @@
 import React from 'react'
 import { Box, Paper, Container, Typography, Button, Stack } from '@mui/material'
-import HeroBackground from '../img/hero/Hero.jpg'
-import HeroImage from '../img/hero/HeroImage.png'
-import Vector from '../img/vector.png'
+import HeroBackground from '../../img/hero/Hero.jpg'
+import HeroImage from '../../img/hero/HeroImage.png'
+import Vector from '../../img/common/vector.png'
 
 const styles = {
-    paperContainer: {
+    customPaper: {
         width: '100%',
         height: 'auto',
         backgroundImage: `url(${HeroBackground})`,
@@ -19,7 +19,7 @@ const styles = {
 const Hero = () => {
     return (
         <Paper
-            style={styles.paperContainer}
+            style={styles.customPaper}
             elevation={0}
             sx={{borderRadius: 10}}
         >
@@ -45,7 +45,7 @@ const Hero = () => {
                         </Stack>
                     </Box>
                     <Box sx={{ zIndex: 1, maxWidth: { xs: '400px', md: '800px' }, marginTop: 'auto', width: {sm: '40%', md: '50%', lg: '40%' }, position: 'relative', top: {sm: '3rem', md: 0}}}>
-                        <img style={{ width: '100%', verticalAlign: 'bottom' }} src={HeroImage} alt="Hero" />
+                        <img className='banner-img-large' src={HeroImage} alt="Hero" />
                     </Box>
                 </Stack>
             </Container>
