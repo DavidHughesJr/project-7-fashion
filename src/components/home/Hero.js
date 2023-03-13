@@ -44,7 +44,7 @@ const Hero = () => {
                             <Button variant='contained' color='secondary'> Shop Now </Button>
                         </Stack>
                     </Box>
-                    <Box sx={{ zIndex: 1, maxWidth: { xs: '400px', md: '800px' }, marginTop: 'auto', width: {sm: '40%', md: '50%', lg: '40%' }, position: 'relative', top: {sm: '3rem', md: 0}}}>
+                    <Box sx={{ zIndex: 1, marginTop: 'auto', width: {xs: '80%', sm: '50%', md: '50%', lg: '50%' }, position: 'relative', top: {xs: '3rem', md: 0}}}>
                         <img className='banner-img-large' src={HeroImage} alt="Hero" />
                     </Box>
                 </Stack>

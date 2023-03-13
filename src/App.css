@@ -25,6 +25,7 @@
 .banner-img-large {
   width: 100%;
   vertical-align: bottom;
+  border-radius: 10px;
 }
 /* ===== LISTING SECTION =====  */
 .listing-heading {
@@ -38,4 +39,7 @@
     width: 10%;
     z-index: 1;
 }
-
+/* ===== FOOTER SECTION =====  */
+.footer-icon {
+  margin-right: 10px
+}
