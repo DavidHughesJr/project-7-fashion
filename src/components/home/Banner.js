@@ -17,7 +17,7 @@ const styles = {
 const Banner = () => {
     return (
         <Box style={styles.customBox}>
-            <Stack direction='row' justifyContent='space-between' alignItems='center' p={3}>
+            <Stack direction={{xs: 'column', md: 'row'}} justifyContent='space-between' alignItems='center' p={3}>
                 <Stack direction='row' alignItems="center" spacing={1}>
                     <LocalShipping />   <Typography variant="h5" fontWeight={900}> Fast Delivery </Typography>
                 </Stack>

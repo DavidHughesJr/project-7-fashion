@@ -21,11 +21,11 @@ const SalesBanner = () => {
             elevation={0}
         >
             <Stack justifyContent='center' alignItems='center' direction={{ xs: 'column', md: 'row' }} divider={<Divider orientation="vertical" flexItem />}>
-                <Box sx={{ width: {xs: '100%', md: '30%'}}}>
-                    <img className='banner-img-large' style={{borderRadius: '10px'}} src={SalesImg} alt="Sales Image"/>
+                <Box sx={{ width: { xs: '70%', sm: '50%', lg: '40%' }, position: 'relative', top: { xs: '3rem', md: 0 } }}>
+                    <img className='banner-img-large' style={{borderRadius: '10px', }}  src={SalesImg} alt="Sales Image"/>
                 </Box>
-                <Stack spacing={2} m={{xs: 0, md: 'auto' }} p={2}>
-                    <Typography variant="h2" fontWeight={900}> PAYDAY </Typography>
+                <Stack spacing={1} m={{xs: 0, md: 'auto' }} p={2}>
+                    <Box className="banner-box-white">    <Typography className='hero-text' variant='h2'> PAYDAY </Typography> </Box>
                     <Typography variant="h3" fontWeight={900}> SALE NOW </Typography>
                     <Typography variant="subtitle" fontWeight={500}> Spend minimal $100 & get 30% off
                         voucher code for your next purchase! </Typography>
