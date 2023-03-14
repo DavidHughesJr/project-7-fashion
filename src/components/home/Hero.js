@@ -23,7 +23,7 @@ const Hero = () => {
             elevation={0}
             sx={{borderRadius: 10}}
         >
-            <Container maxWidth='lg'>
+            <Container maxWidth='xl'>
                 <Stack
                     justifyContent="space-between"
                     alignItems="center"
@@ -45,7 +45,7 @@ const Hero = () => {
                         </Stack>
                     </Box>
                     <Box sx={{ zIndex: 1, marginTop: 'auto', width: {xs: '80%', sm: '50%', md: '50%', lg: '50%' }, position: 'relative', top: {xs: '3rem', md: 0}}}>
-                        <img className='banner-img-large' src={HeroImage} alt="Hero" />
+                        <img className='hero-img-large' src={HeroImage} alt="Hero" />
                     </Box>
                 </Stack>
             </Container>
