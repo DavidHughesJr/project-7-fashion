@@ -1,14 +1,39 @@
-import * as React from 'react';
-import { AppBar, Box, Container, Toolbar, IconButton, Typography, Menu, MenuItem, Button } from '@mui/material';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { AppBar, Box, Container, Toolbar, IconButton, Typography, Menu, MenuItem, Button, Badge } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import Logo from "../../img/common/logo.jpg"
+// Later
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+
 
 const pages = ['Catalogue', 'Fashion', 'Blog'];
+const links = ['/catalogue', '/fashion', '/blog']
+
+const pageLinks = [
+    {
+        page: 'Catalogue',
+        link: '/catalogue',
+    },
+    {
+        page: 'Fashion',
+        link: '/fashion',
+    },
+    {
+        page: 'Blog',
+        link: '/blog',
+    },
+
+]
+
+
+
 
 
 function NavBar() {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElNav, setAnchorElNav] = useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -17,6 +42,9 @@ function NavBar() {
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
+
+    const { cart } = useContext(CartContext)
+
 
     return (
         <AppBar elevation={0} color='background' position="static">
@@ -78,11 +106,12 @@ function NavBar() {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
+                            {
+                                pageLinks.map(({ page, link }) => (
+                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                        <Typography component="a" href={link} sx={{ textDecoration: 'none' }} color='secondary' textAlign="center">{page}</Typography>
+                                    </MenuItem>
+                                ))}
                         </Menu>
                     </Box>
                     <Box
@@ -100,7 +129,7 @@ function NavBar() {
                         variant="subtitle2"
                         noWrap
                         component="a"
-                        href=""
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
@@ -115,25 +144,24 @@ function NavBar() {
                         FASHION
                     </Typography>
                     <Box sx={{ flexGrow: 1, justifyContent: 'flex-end', display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ color: 'inherit', display: 'block', m: 3 }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
+                        {
+                            pageLinks.map(({ page, link }) => (
+                                <Button
+                                    key={page}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ color: 'inherit', display: 'block', m: 3 }}
+                                    component='a'
+                                    href={link}
+                                >
+                                    {page}
+                                </Button>
+                            ))}
                     </Box>
-                    <IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        color="inherit"
-                    >
-                        <LocalMallIcon />
-                    </IconButton>
+                    <Link to={'/cart'}>
+                        <Badge badgeContent={cart ? cart?.total_items : 0} color="secondary">
+                            <LocalMallIcon color="action" />
+                        </Badge>
+                    </Link>
                 </Toolbar>
             </Container>
         </AppBar>

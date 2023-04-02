@@ -9,7 +9,7 @@ const styles = {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     paddingTop: '1rem',
-    borderRadius: '10px'
+    borderRadius: '1rem'
   }
 };
 
@@ -23,13 +23,13 @@ const Newsletter = () => {
         <Typography p={2} variant="subtitle2" fontWeight={500} color="white"> Type your email down below </Typography>
           <Box
             component="form"
-            p={2}
+            p={5}
           >
             <TextField
               id="outlined-password-input"
               label="Type Email Here"
               autoComplete="current-password"
-              sx={{ background: 'white' }}
+              sx={{ background: 'white', borderRadius: '4px', border: 'none !important'}}
               color='secondary'
               InputProps={{ endAdornment: <Button variant="contained" color="secondary"> Submit </Button> }}
             />

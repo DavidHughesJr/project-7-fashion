@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import { Box, Paper, Container, Typography, Button, Stack } from '@mui/material'
 import HeroBackground from '../../img/hero/Hero.jpg'
 import HeroImage from '../../img/hero/HeroImage.png'
@@ -41,7 +41,7 @@ const Hero = () => {
                             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center',}} > 
                                 <img style={{ width: '70%', padding: 10 }} src={Vector} alt="hero vector" />
                             </Box>
-                            <Button variant='contained' color='secondary'> Shop Now </Button>
+                            <Button component={Link} to='../catalogue'  variant='contained' color='secondary'> Shop Now </Button>
                         </Stack>
                     </Box>
                     <Box sx={{ zIndex: 1, marginTop: 'auto', width: {xs: '80%', sm: '50%', md: '50%', lg: '50%' }, position: 'relative', top: {xs: '3rem', md: 0}}}>

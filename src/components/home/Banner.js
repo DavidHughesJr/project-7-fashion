@@ -4,7 +4,6 @@ import { LocalShipping, Approval, WorkspacePremium } from "@mui/icons-material";
 const styles = {
     customBox: {
         width: '100%',
-        height: 'auto',
         backgroundColor: '#EBD96B',
         borderRadius: '10px',
         height: { xs: '20rem', md: '5rem' },
