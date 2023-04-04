@@ -6,12 +6,13 @@ import ProductInfo from "../components/product/ProductInfo"
 import ProductAccordion from '../components/product/ProductAccordion'
 import RelatedProducts from '../components/product/RelatedProducts'
 import { Container, Stack, Box } from "@mui/material"
-
+import { renderLinearLoader } from "../components/helper/Loaders"
 
 
 const ProductPage = () => {
 
     const [product, setProduct] = useState([])
+    const [loading, setLoading] = useState(true)
 
     let { id } = useParams()
 
@@ -24,12 +25,21 @@ const ProductPage = () => {
         fetchProducts()
     }, [id]);
 
+    useEffect(() => {
+        if (product.length > 0) {
+            setLoading(false)
+        }
+    }, [product])
+
+ 
 
     return (
         <Container maxWidth='lg'>
             <Stack gap={5} mb={10} flexDirection={{ xs: 'column', md: 'row' }} alignItems={{ xs: 'center', md: 'flex-start' }}>
                 <Box width={{ xs: '100%', md: '50%' }} >
-                    <ProductGallery product={product} />
+                    {
+                        loading ? renderLinearLoader() : <ProductGallery product={product} />
+                    }
                 </Box>
                 <Stack spacing={1} p={1} alignItems={{ xs: 'center', md: 'flex-start' }}>
                     <ProductInfo product={product} />

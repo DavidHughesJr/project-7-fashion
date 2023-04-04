@@ -8,10 +8,6 @@ import Logo from "../../img/common/logo.jpg"
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 
-
-const pages = ['Catalogue', 'Fashion', 'Blog'];
-const links = ['/catalogue', '/fashion', '/blog']
-
 const pageLinks = [
     {
         page: 'Catalogue',

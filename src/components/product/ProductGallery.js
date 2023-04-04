@@ -19,7 +19,6 @@ const ProductGallery = ({ product }) => {
     const [productAssets, setProductAssets] = useState([])
 
 
-
     useEffect(() => {
         const assets = product.map((item) => item.assets)
         setProductAssets(...assets)

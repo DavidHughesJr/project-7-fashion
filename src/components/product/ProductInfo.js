@@ -42,7 +42,7 @@ const ProductInfo = ({ product }) => {
     const [disableBuy, setDisableBuy] = useState(true)
     const [loading, setLoading] = useState(false)
     const [hasVariant, setHasVariant] = useState(false)
-    
+
 
     const handleDecreaseQuantity = () => {
         if (quantity > 0)
@@ -58,14 +58,16 @@ const ProductInfo = ({ product }) => {
         setHasVariant(!hasVariant)
     };
 
-    console.log(hasVariant)
-
     useEffect(() => {
         if (sizes === '') setHasVariant(true)
         if (quantity === 0 || !hasVariant) setDisableBuy(true)
-        if (quantity > 0 && hasVariant ) setDisableBuy(false)
+        if (quantity > 0 && hasVariant) setDisableBuy(false)
+        if (variantId != null && quantity > 0) setDisableBuy(false)
+        if (variantId == null) setDisableBuy(true)
 
     }, [quantity, variantId, hasVariant, sizes])
+
+
 
 
     let variant = {
@@ -74,7 +76,7 @@ const ProductInfo = ({ product }) => {
 
     const handleAddToCart = async () => {
         const addToCart = async () => {
-            const addItem = await commerce.cart.add(id, quantity, sizes? variant : null);
+            const addItem = await commerce.cart.add(id, quantity, sizes ? variant : null);
             setCart(addItem.cart)
             setLoading(false)
         }
@@ -103,8 +105,8 @@ const ProductInfo = ({ product }) => {
                 aria-label="Platform"
             >
                 {
-                  sizes? sizes?.map((item) => (
-                        <ToggleButton onClick={(e) => console.log(e.target.value)} key={item.id} sx={{ border: '1px solid grey !important', borderRadius: '25px !important' }} value={item.id}> {item.name} </ToggleButton>
+                    sizes ? sizes?.map((item) => (
+                        <ToggleButton key={item.id} sx={{ border: '1px solid grey !important', borderRadius: '25px !important' }} value={item.id}> {item.name} </ToggleButton>
                     )) : ''
                 }
             </StyledToggleButtonGroup>
@@ -115,7 +117,7 @@ const ProductInfo = ({ product }) => {
             </Stack>
             {
                 loading ? <Box m={2}> <CircularProgress />  </Box> :
-                    <Button disabled={disableBuy}   color="secondary" variant="contained" onClick={handleAddToCart}> Add To Cart </Button>
+                    <Button disabled={disableBuy} color="secondary" variant="contained" onClick={handleAddToCart}> Add To Cart </Button>
             }
 
         </Stack>
