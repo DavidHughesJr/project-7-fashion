@@ -13,15 +13,6 @@ const pageLinks = [
         page: 'Catalogue',
         link: '/catalogue',
     },
-    {
-        page: 'Fashion',
-        link: '/fashion',
-    },
-    {
-        page: 'Blog',
-        link: '/blog',
-    },
-
 ]
 
 

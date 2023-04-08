@@ -1,6 +1,6 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } from "react-router-dom";
-import { Root, ErrorBoundary, Homepage, CategoryPage, ProductPage, CataloguePage, BlogPage, CartPage, CheckoutPage, ConfirmationPage } from './pages/AllPages';
+import { Root, ErrorBoundary, Homepage, CategoryPage, ProductPage, CataloguePage, CartPage, CheckoutPage, ConfirmationPage } from './pages/AllPages';
 import CartContextProvider from './context/CartContext';
 
 
@@ -15,7 +15,6 @@ const App = () => {
         <Route path='/category/:id' element={<CategoryPage />} />
         <Route path='/product/:id' element={<ProductPage />} />
         <Route path='/catalogue' element={<CataloguePage />} />
-        <Route path='/blog' element={<BlogPage />} />
         <Route path='/cart' element={<CartPage />} />
         <Route path='/checkout' element={<CheckoutPage />} />
         <Route path='/confirmation' element={<ConfirmationPage />} />

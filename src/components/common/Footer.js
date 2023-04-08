@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography, Link } from "@mui/material";
 import Facebook from '../../img/footer/facebook.png'
 import Instagram from '../../img/footer/instagram.png'
 import Twitter from '../../img/footer/twitter.png'
@@ -28,10 +28,10 @@ const Footer = () => {
             <Typography color='white' variant="h3"> Fashion </Typography>
             <Typography color='grey' variant="subtitle2"> Complete your style with awesome clothes from us. </Typography>
             <Box>
-              <img className="footer-icon" src={Facebook} alt='facebook' />
-              <img className="footer-icon" src={Instagram} alt='facebook' />
-              <img className="footer-icon" src={Twitter} alt='facebook' />
-              <img className="footer-icon" src={Linkedin} alt='facebook' />
+              <Link underline="none" href="https://facebook.com"> <img className="footer-icon" src={Facebook} alt='facebook' /> </Link>
+              <Link underline="none" href="https://facebook.com"> <img className="footer-icon" src={Twitter} alt='facebook' /> </Link>
+              <Link underline="none" href="https://facebook.com"> <img className="footer-icon" src={Instagram} alt='facebook' /> </Link>
+              <Link underline="none"href="https://facebook.com"> <img className="footer-icon" src={Linkedin} alt='facebook' /> </Link>
             </Box>
           </Stack>
           <Stack direction={{ md: 'row' }} spacing={5}>
