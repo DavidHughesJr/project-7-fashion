@@ -29,9 +29,9 @@ const Footer = () => {
             <Typography color='grey' variant="subtitle2"> Complete your style with awesome clothes from us. </Typography>
             <Box>
               <Link underline="none" href="https://facebook.com"> <img className="footer-icon" src={Facebook} alt='facebook' /> </Link>
-              <Link underline="none" href="https://facebook.com"> <img className="footer-icon" src={Twitter} alt='facebook' /> </Link>
-              <Link underline="none" href="https://facebook.com"> <img className="footer-icon" src={Instagram} alt='facebook' /> </Link>
-              <Link underline="none"href="https://facebook.com"> <img className="footer-icon" src={Linkedin} alt='facebook' /> </Link>
+              <Link underline="none" href="https://twitter.com"> <img className="footer-icon" src={Twitter} alt='twitter' /> </Link>
+              <Link underline="none" href="https://instagram.com"> <img className="footer-icon" src={Instagram} alt='instagram' /> </Link>
+              <Link underline="none"href="https://linkedIn.com"> <img className="footer-icon" src={Linkedin} alt='linkedIn' /> </Link>
             </Box>
           </Stack>
           <Stack direction={{ md: 'row' }} spacing={5}>
