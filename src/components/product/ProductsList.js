@@ -30,7 +30,7 @@ const ProductList = ({ products }) => {
                                                     component="img"
                                                     image={item?.assets[0]?.url}
                                                     alt="listing info"
-                                                    sx={{minHeight: 515}}
+                                                    sx={{minHeight: 550}}
                                                 />
                                                 <CardContent>
                                                     <Typography gutterBottom variant="subtitle2" component="div" color='secondary' >

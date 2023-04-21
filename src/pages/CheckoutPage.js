@@ -141,7 +141,7 @@ const CheckoutPage = () => {
   console.log(country)
 
   return (
-    <Container maxWidth='x'>
+    <Container maxWidth='xl'>
       {
         !checkoutToken ? <Stack margin={50} justifyContent='center' alignItems='center'> <CircularProgress size='100px' />  </Stack> :
           <>
@@ -194,12 +194,11 @@ const CheckoutPage = () => {
                         </Box>
                         <Box width={{ xs: '100%', md: '50%' }}>
                           <Typography variant="subtitle2" mb={2}> Credit Card Information Required* </Typography>
-                          <Stack gap={2}>
+                          <Stack gap={2} >
                             <>
                               <CardElement />
                               <Button type="submit" variant="contained" color="primary" >
                                 <Typography variant="subtitle2" > Pay {checkoutToken?.live?.subtotal.formatted_with_symbol} </Typography>
-
                               </Button>
                             </>
                           </Stack>
