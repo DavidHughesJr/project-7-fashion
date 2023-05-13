@@ -14,7 +14,7 @@ const ConfirmationPage = () => {
     
     return (
         <Container maxWidth="lg">
-            <Stack mt={10} spacing={2}>
+            <Stack spacing={2}>
                 <Typography mt={5} variant="h4"> Thank you for your purchase! </Typography>
                 <Typography mt={5} variant="h4"> {orderReceipt.customer.firstname}, {orderReceipt.customer.lastname}  </Typography>
                 <Typography variant="h5"> Receipt Total: {orderReceipt.order_value.formatted_with_symbol}  </Typography>

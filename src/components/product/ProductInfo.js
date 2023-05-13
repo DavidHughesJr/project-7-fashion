@@ -8,6 +8,7 @@ import { CartContext } from "../../context/CartContext";
 
 
 
+
 const ProductInfo = ({ product }) => {
 
     const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
@@ -79,6 +80,8 @@ const ProductInfo = ({ product }) => {
             const addItem = await commerce.cart.add(id, quantity, sizes ? variant : null);
             setCart(addItem.cart)
             setLoading(false)
+            console.log(addItem.product_name)
+            alert(`${addItem.product_name} has been added to the cart`)
         }
         const buttonChange = async () => {
             setQuantity(0)
@@ -91,7 +94,7 @@ const ProductInfo = ({ product }) => {
 
 
     return (
-        <Stack spacing={2} alignItems={{ xs: 'center', md: 'flex-start' }}>
+        <Stack spacing={2} width='90%' alignItems={{ xs: 'center', md: 'flex-start' }}>
             <Typography variant='subtitle2'> {productSubtitle} </Typography>
             <Typography variant='h4' fontWeight={700}>  {productName} </Typography>
             <Typography variant='h4' fontWeight={500}> {price}  </Typography>

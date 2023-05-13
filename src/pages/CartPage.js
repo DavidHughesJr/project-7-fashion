@@ -17,11 +17,11 @@ const CartPage = () => {
 
 
   const renderEmptyCartMessage = () => {
-    return 'Cart Empty'
+    return <Stack mb={50}> <Typography variant='h4'> Empty Cart </Typography> </Stack>
   }
   const renderCart = () => {
     return (
-      <Stack direction={{ xs: 'column-reverse', md: 'row' }} gap={10} justifyContent='center' alignItems={{ xs: 'center', md: 'flex-start' }} mt={10}>
+      <Stack direction={{ xs: 'column', md: 'row' }} gap={10} justifyContent='center' alignItems={{ xs: 'center', md: 'flex-start' }} mt={10}>
         <CartItems  editing={editing} setEditing={setEditing} />
         <CartSummary setEditing={setEditing} />
       </Stack>

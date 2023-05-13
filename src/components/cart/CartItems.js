@@ -45,8 +45,8 @@ const CartItems = ({editing, setEditing}) => {
           {
             editing ? <CircularProgress size='25px' /> :
               cart?.line_items.map((items) => (
-                <Card key={items.id} elevation={0} mb={2} sx={{ width: '70%', display: 'flex', gap: 1, textDecoration: 'none', color: 'black', marginBottom: '10px' }}>
-                  <Box>
+                <Card key={items.id} elevation={0} mb={2} sx={{ width: '100%', display: 'flex', flexWrap: 'wrap', gap: 1, textDecoration: 'none', color: 'black', marginBottom: '10px' }}>
+                  <Box m={{xs: 'auto', md: 0}}>
                     <Link to={`../product/${items.product_id}`}>
                       <CardMedia
                         component="img"

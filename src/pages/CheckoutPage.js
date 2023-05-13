@@ -10,7 +10,7 @@ import { loadStripe } from '@stripe/stripe-js';
 
 
 
-const stripePromise = loadStripe('pk_test_51MsXW2AvjyahcMpRe8BXO7Raxq1OBHRWN8fxLjBmWivHZkzbfICfRiwudXRJ4Sh9r6cVihPPzlEo7hx4llLBgcxq00iVszV6HT');
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE);
 
 
 
@@ -28,6 +28,7 @@ const CheckoutPage = () => {
   const [shippingSubdivisions, setShippingSubdivisions] = useState([])
   const [subdivision, setSubdivision] = useState('')
   const [shippingOptions, setShippingOptions] = useState([])
+  const [loadingReceipt, setLoadingReceipt] = useState(false)
 
 
   useEffect(() => {
@@ -46,8 +47,6 @@ const CheckoutPage = () => {
   const fetchShippingCounties = async (checkoutTokenId) => {
     const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId)
     setShippingCountries(countries)
-    const count = await commerce.services.localeListShippingCountries(checkoutTokenId)
-    console.log(count)
   }
 
   const countriesList = Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name }))
@@ -116,6 +115,14 @@ const CheckoutPage = () => {
             postal_zip_code: data.shippingZip,
             country: data.shippingCountries,
           },
+          billing: {
+            name: `${data.firstName} ${data.lastName}`,
+            street: data.shippingStreet,
+            town_city: data.shippingCity,
+            county_state: data.shippingSubdivisions,
+            postal_zip_code: data.shippingZip,
+            country: data.shippingCountries,
+          },
           fulfillment: {
             shipping_method: data.shippingOptions
           },
@@ -131,19 +138,21 @@ const CheckoutPage = () => {
         const newCart = await commerce.cart.refresh()
         setCart(newCart)
         window.sessionStorage.setItem('order_receipt', JSON.stringify(order));
+        setLoadingReceipt(true)
         navigate('/confirmation')
       } catch (error) {
+        if (error) setLoadingReceipt(false)
         console.log(error)
+        alert(error.data.error.message)
       }
   };
 
-
-  console.log(country)
+console.log(loadingReceipt)
 
   return (
     <Container maxWidth='xl'>
       {
-        !checkoutToken ? <Stack margin={50} justifyContent='center' alignItems='center'> <CircularProgress size='100px' />  </Stack> :
+        !checkoutToken ? <Stack mt={{xs: 10, md: 20}} mb={{xs: 10, md: 20}} margin='auto' justifyContent='center' alignItems='center'> <CircularProgress size='100px' />  </Stack> :
           <>
             <Elements stripe={stripePromise}>
               <ElementsConsumer>{({ elements, stripe }) => (
@@ -197,9 +206,14 @@ const CheckoutPage = () => {
                           <Stack gap={2} >
                             <>
                               <CardElement />
-                              <Button type="submit" variant="contained" color="primary" >
+                              <Button type="submit" variant="contained" color="primary" onClick={() => setLoadingReceipt(true)}  >
                                 <Typography variant="subtitle2" > Pay {checkoutToken?.live?.subtotal.formatted_with_symbol} </Typography>
                               </Button>
+                              {
+                                loadingReceipt? <Stack mt={{ xs: 10, md: 20 }} mb={{ xs: 10, md: 20 }} margin='auto' justifyContent='center' alignItems='center'> <CircularProgress size='100px' />  </Stack>
+                                :
+                                ''
+                              }
                             </>
                           </Stack>
                         </Box>
